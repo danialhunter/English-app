@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="ocean" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9faf6"/>
+      <stop offset="1" stop-color="#bee9df"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#12343b" flood-opacity=".18"/>
+    </filter>
+  </defs>
+  <rect x="72" y="72" width="880" height="880" rx="224" fill="url(#ocean)" filter="url(#shadow)"/>
+  <path d="M640 206c-112-60-248 15-224 142 17 91 111 103 181 73 97-42 170 76 119 166-38 68-130 76-196 24-91-72-73-230 39-292"
+        fill="none" stroke="#17756d" stroke-width="78" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M510 606c-105 58-123 180-40 231 88 54 183-39 120-105-38-40-99-3-67 39"
+        fill="none" stroke="#17756d" stroke-width="72" stroke-linecap="round"/>
+  <path d="M416 324l-108 32 111 43M665 456l93 27-74 66" fill="none" stroke="#17756d" stroke-width="54" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="531" cy="280" r="30" fill="#18353d"/>
+  <circle cx="521" cy="270" r="9" fill="#fff"/>
+  <circle cx="757" cy="225" r="42" fill="#f4c85b"/>
+  <circle cx="810" cy="304" r="22" fill="#ee725e"/>
+</svg>

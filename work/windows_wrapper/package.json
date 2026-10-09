@@ -1,0 +1,54 @@
+{
+  "name": "seahorse-english-tracker",
+  "version": "2.5.0",
+  "private": true,
+  "description": "EtonHouse English Tracker desktop app",
+  "main": "main.js",
+  "scripts": {
+    "prepare:web": "node prepare-web.js",
+    "test": "node --test tests/*.test.js",
+    "start": "npm run prepare:web && electron .",
+    "dist:win": "npm run prepare:web && electron-builder --win --x64 --publish never",
+    "dist": "npm run dist:win"
+  },
+  "build": {
+    "appId": "com.seahorse.englishtracker",
+    "productName": "EtonHouse English Tracker",
+    "toolsets": {
+      "nsis": "1.2.1"
+    },
+    "directories": {
+      "output": "../../outputs/windows-build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "storage.js",
+      "xlsx-export.js",
+      "web/**/*",
+      "Quick Start.txt",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": "nsis",
+      "artifactName": "EtonHouse-English-Tracker-Windows-Setup-${version}.${ext}",
+      "signExecutable": false,
+      "icon": "../seahorse_app/assets/EtonHouse-AppIcon-1024.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false,
+      "createDesktopShortcut": true,
+      "runAfterFinish": true
+    },
+    "extraMetadata": {
+      "main": "main.js"
+    }
+  },
+  "devDependencies": {
+    "electron": "44.3.0",
+    "electron-builder": "26.15.3"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "version": "etonhouse-guide-library-2026-09-v1",
+    "sourceTitle": "A Teacher's Guide to English Teaching",
+    "sourceFile": "assets/teacher-guide.pdf",
+    "sourcePageCount": 44,
+    "sourceSha256": "ace90cfd6cf301b6bdd803905d3b6a7506328010e7a823015eab4b38cf5d62cf",
+    "totalEntries": 647,
+    "categoryCounts": {
+      "vocabulary": 251,
+      "sentences": 140,
+      "listening": 154,
+      "grammar": 20,
+      "phonics": 15,
+      "reading": 53,
+      "writing": 6,
+      "songs": 4,
+      "teaching": 4
+    },
+    "weeklyUnits": 216,
+    "weeklyVocabularyEntries": 1072,
+    "weeklySentenceStructures": 140,
+    "expandedVocabularyEntries": 1096,
+    "vocabularyByLevel": {
+      "pre-nursery": 214,
+      "nursery": 287,
+      "kindergarten-1": 330,
+      "kindergarten-2": 265
+    },
+    "sightWordEntries": 220,
+    "functionalSentenceEntries": 152,
+    "vocabularyCountingNote": "The weekly plan has 1,072 source vocabulary entries. Its grouped alternatives and examples expand to 1,096 vocabulary terms in the library. Counts retain repeats across topics/ages; they are not counts of distinct English words.",
+    "coverageNote": "All 44 original PDF pages are included. Weekly vocabulary and grammar-column sentences are retained; functional language, grammar guidance, phonics, sight words, reading, writing, songs and teaching guidance are now available in the library and original guide. Companion activities are practical summaries, not additional verbatim source requirements.",
+    "adaptationsForClassroomUse": [
+      {
+        "sourcePage": 3,
+        "printed": "What is your name? - XXX.",
+        "used": "What is your name? - My name is ___."
+      },
+      {
+        "sourcePage": 15,
+        "printed": "I like funny book.",
+        "used": "I like a funny book."
+      },
+      {
+        "sourcePage": 15,
+        "printed": "Tony have cat.",
+        "used": "Tony has a cat."
+      },
+      {
+        "sourcePage": 16,
+        "printed": "The dog play(s).",
+        "used": "The dog plays."
+      },
+      {
+        "sourcePage": 32,
+        "printed": "Which be/do...? Which one...is/do...?",
+        "used": "Which ... is ...? / Which one does ...?"
+      },
+      {
+        "sourcePage": 33,
+        "printed": "Why...? / Why...is important?",
+        "used": "Why ...? / Why is ... important?"
+      },
+      {
+        "sourcePage": 35,
+        "printed": "I am going to play slide.",
+        "used": "I am going to play on the slide."
+      }
+    ],
+    "phonicsNotationNote": "Repeated oo and th represent the two printed sound positions. The source notation c k is retained. No phonics sounds are silently removed as duplicates."
+  },
+  "sourceAudit": {
+    "passed": true,
+    "originalPages": 44,
+    "matchedVocabularyEntries": 975,
+    "expandedNumberEntries": 96,
+    "correctedVocabularyEntries": 1,
+    "matchedSentenceStructures": 140,
+    "unresolvedSourceMismatches": []
+  },
+  "stableWeeklyCurriculumSha256": "185cc909ab7ceff12a4855762818d3ca9d6f472b513324d303ccd1ca3efd3409",
+  "sourceVocabularyByLevel": {
+    "pre-nursery": 210,
+    "nursery": 271,
+    "kindergarten-1": 328,
+    "kindergarten-2": 263
+  },
+  "countReconciliation": [
+    {
+      "levelId": "pre-nursery",
+      "weekly": 210,
+      "expanded": 214,
+      "reason": "pets (dog, cat, bird, rabbit) is one printed entry and five individual terms."
+    },
+    {
+      "levelId": "nursery",
+      "weekly": 271,
+      "expanded": 287,
+      "reason": "good afternoon/evening/night adds two terms; fourteen opposite adjective pairs add fourteen. Other slash synonyms remain grouped."
+    },
+    {
+      "levelId": "kindergarten-1",
+      "weekly": 328,
+      "expanded": 330,
+      "reason": "train/bus/taxi station is expanded into three station names."
+    },
+    {
+      "levelId": "kindergarten-2",
+      "weekly": 263,
+      "expanded": 265,
+      "reason": "taxi/bus driver and refrigerator/fridge each expand into two terms."
+    }
+  ],
+  "preservedCorrections": [
+    "rolling pi → rolling pin (vocabulary transcription)",
+    "What is your name? - XXX. → What is your name? - My name is ___. (page 3)",
+    "I like funny book. → I like a funny book. (page 15)",
+    "Tony have cat. → Tony has a cat. (page 15)",
+    "The dog play(s). → The dog plays. (page 16)",
+    "Which be/do...? Which one...is/do...? → Which ... is ...? / Which one does ...? (page 32)",
+    "Why...? / Why...is important? → Why ...? / Why is ... important? (page 33)",
+    "I am going to play slide. → I am going to play on the slide. (page 35)"
+  ],
+  "addedCoverage": [
+    "152 functional listening/speaking examples indexed individually (including short PN phrases)",
+    "220 source sight-word list entries, split into sets of no more than five",
+    "Age-specific grammar, all seven phonics groups and alternatives, reading/writing guidance and teaching companions",
+    "Complete original PDF and fresh text extraction for all 44 pages, including songs/routines and image-only cover"
+  ],
+  "limitation": "The guide points to external phonics and reading programmes; their separate books, workbooks, audio and online resources are not part of the supplied PDF and are not bundled. No additional curriculum or external teaching requirements were invented.",
+  "sourceReview": "Original PDF metadata and all pages freshly extracted. Detailed language/literacy sections compared with saved extraction and structured sources. Phonics and all five sight-word lists visually checked on physical pages 27, 28, 36 and 37. Original page references retained."
+}

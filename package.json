@@ -1,0 +1,13 @@
+{
+  "name": "etonhouse-english-tracker-development",
+  "version": "2.5.0",
+  "private": true,
+  "description": "Development checks for EtonHouse English Tracker",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "test": "node scripts/test.mjs",
+    "test:browser": "node work/seahorse_app/tests/teacher-flow-regressions.mjs"
+  },
+  "devDependencies": {"playwright": "1.62.1"}
+}
+

@@ -1,0 +1,778 @@
+{
+  "levels": [
+    {
+      "id": "pre-nursery",
+      "name": "Pre-Nursery",
+      "ageBand": "2-3",
+      "sentences": [
+        {
+          "text": "What is your name? - My name is ___.",
+          "kind": "Everyday question",
+          "sourcePage": 3
+        },
+        {
+          "text": "How are you today?",
+          "kind": "Everyday question",
+          "sourcePage": 3
+        },
+        {
+          "text": "What’s the weather like today?",
+          "kind": "Everyday question",
+          "sourcePage": 3
+        },
+        {
+          "text": "What is this? / Is this ...?",
+          "kind": "Everyday question",
+          "sourcePage": 3
+        },
+        {
+          "text": "Can you ...?",
+          "kind": "Everyday question",
+          "sourcePage": 3
+        },
+        {
+          "text": "Do you like ...? / What ... do you like?",
+          "kind": "Everyday question",
+          "sourcePage": 3
+        },
+        {
+          "text": "Who is she / he?",
+          "kind": "Everyday question",
+          "sourcePage": 3
+        },
+        {
+          "text": "How many ...?",
+          "kind": "Everyday question",
+          "sourcePage": 3
+        },
+        {
+          "text": "Where is ...? - Here.",
+          "kind": "Everyday question",
+          "sourcePage": 3
+        },
+        {
+          "text": "What is your favorite ...?",
+          "kind": "Everyday question",
+          "sourcePage": 3
+        },
+        {
+          "text": "What can you see / hear?",
+          "kind": "Everyday question",
+          "sourcePage": 3
+        },
+        {
+          "text": "What would you like to eat / drink?",
+          "kind": "Everyday question",
+          "sourcePage": 3
+        },
+        {
+          "text": "Wash your hands.",
+          "kind": "Daily instruction",
+          "sourcePage": 3
+        },
+        {
+          "text": "Brush your teeth.",
+          "kind": "Daily instruction",
+          "sourcePage": 3
+        },
+        {
+          "text": "Let’s go to ...",
+          "kind": "Daily instruction",
+          "sourcePage": 3
+        },
+        {
+          "text": "It’s clean up / circle / lunch / snack / play time.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "Circle time. Go to the carpet.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "Please sit on the mat.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "Please sit down / stand up.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "Come here / in.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "Line up please.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "Attention please.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "Put the toys away.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "Put the blocks in the box.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "Turn left / right / around.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "One by one please.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "No pushing / touching / talking.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "It’s your turn.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "Wait for your turn please.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "Hurry up / slow down.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "Be careful / watch out!",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        },
+        {
+          "text": "Clap your hands.",
+          "kind": "Daily instruction",
+          "sourcePage": 4
+        }
+      ]
+    },
+    {
+      "id": "nursery",
+      "name": "Nursery",
+      "ageBand": "3-4",
+      "sentences": [
+        {
+          "text": "What is your name?",
+          "kind": "Everyday question",
+          "sourcePage": 14
+        },
+        {
+          "text": "How are you? / How do you feel?",
+          "kind": "Everyday question",
+          "sourcePage": 14
+        },
+        {
+          "text": "What’s the weather like today?",
+          "kind": "Everyday question",
+          "sourcePage": 15
+        },
+        {
+          "text": "What day is it today?",
+          "kind": "Everyday question",
+          "sourcePage": 15
+        },
+        {
+          "text": "What is this? / Is this ...?",
+          "kind": "Everyday question",
+          "sourcePage": 15
+        },
+        {
+          "text": "Can you ...? / What can you do?",
+          "kind": "Everyday question",
+          "sourcePage": 15
+        },
+        {
+          "text": "What ... do you like?",
+          "kind": "Everyday question",
+          "sourcePage": 15
+        },
+        {
+          "text": "Who is she / he?",
+          "kind": "Everyday question",
+          "sourcePage": 15
+        },
+        {
+          "text": "How many ...?",
+          "kind": "Everyday question",
+          "sourcePage": 15
+        },
+        {
+          "text": "What is your favorite ...?",
+          "kind": "Everyday question",
+          "sourcePage": 15
+        },
+        {
+          "text": "I like a funny book.",
+          "kind": "Grammar example",
+          "sourcePage": 15
+        },
+        {
+          "text": "I walk fast.",
+          "kind": "Grammar example",
+          "sourcePage": 15
+        },
+        {
+          "text": "Tony has a cat.",
+          "kind": "Grammar example",
+          "sourcePage": 15
+        },
+        {
+          "text": "Subject-Verb (S-V): The dog plays.",
+          "kind": "Sentence structure",
+          "sourcePage": 16
+        },
+        {
+          "text": "Subject-Verb-Object (S-V-O): I eat apples.",
+          "kind": "Sentence structure",
+          "sourcePage": 16
+        },
+        {
+          "text": "Subject-Verb-Adjective (S-V-Adj): I am angry.",
+          "kind": "Sentence structure",
+          "sourcePage": 16
+        },
+        {
+          "text": "Subject-Verb-Noun (S-V-N): I am a girl.",
+          "kind": "Sentence structure",
+          "sourcePage": 16
+        }
+      ]
+    },
+    {
+      "id": "kindergarten-1",
+      "name": "Kindergarten 1",
+      "ageBand": "4-5",
+      "sentences": [
+        {
+          "text": "Where are you going?",
+          "kind": "Everyday question",
+          "sourcePage": 23
+        },
+        {
+          "text": "How do you go to ...?",
+          "kind": "Everyday question",
+          "sourcePage": 23
+        },
+        {
+          "text": "What are you doing?",
+          "kind": "Everyday question",
+          "sourcePage": 23
+        },
+        {
+          "text": "Where do you live?",
+          "kind": "Everyday question",
+          "sourcePage": 23
+        },
+        {
+          "text": "Where is ...?",
+          "kind": "Everyday question",
+          "sourcePage": 23
+        },
+        {
+          "text": "What do you want to do?",
+          "kind": "Everyday question",
+          "sourcePage": 23
+        },
+        {
+          "text": "Why ...?",
+          "kind": "Everyday question",
+          "sourcePage": 23
+        },
+        {
+          "text": "It’s my toy.",
+          "kind": "Possessive adjective",
+          "sourcePage": 24
+        },
+        {
+          "text": "I like our school.",
+          "kind": "Possessive adjective",
+          "sourcePage": 24
+        },
+        {
+          "text": "This is a zebra.",
+          "kind": "Demonstrative",
+          "sourcePage": 24
+        },
+        {
+          "text": "It gets hot.",
+          "kind": "Simple present",
+          "sourcePage": 25
+        },
+        {
+          "text": "It snows in the winter.",
+          "kind": "Simple present",
+          "sourcePage": 25
+        },
+        {
+          "text": "It doesn’t snow in the summer.",
+          "kind": "Simple present",
+          "sourcePage": 25
+        },
+        {
+          "text": "I build a house.",
+          "kind": "Simple present",
+          "sourcePage": 25
+        },
+        {
+          "text": "We go to school by bus.",
+          "kind": "Simple present",
+          "sourcePage": 25
+        },
+        {
+          "text": "You have four shells.",
+          "kind": "Simple present",
+          "sourcePage": 25
+        },
+        {
+          "text": "They don’t have a pet.",
+          "kind": "Simple present",
+          "sourcePage": 25
+        },
+        {
+          "text": "She needs a bag.",
+          "kind": "Simple present",
+          "sourcePage": 25
+        },
+        {
+          "text": "He has a cap.",
+          "kind": "Simple present",
+          "sourcePage": 25
+        },
+        {
+          "text": "He doesn’t have a cap.",
+          "kind": "Simple present",
+          "sourcePage": 25
+        },
+        {
+          "text": "I am playing the drum.",
+          "kind": "Present continuous",
+          "sourcePage": 25
+        },
+        {
+          "text": "She is dancing.",
+          "kind": "Present continuous",
+          "sourcePage": 25
+        },
+        {
+          "text": "Subject-Verb (S-V): The telephone rings.",
+          "kind": "Sentence structure",
+          "sourcePage": 25
+        },
+        {
+          "text": "Subject-Verb-Object (S-V-O): I brush my teeth.",
+          "kind": "Sentence structure",
+          "sourcePage": 25
+        },
+        {
+          "text": "I comb my hair.",
+          "kind": "Subject-Verb-Object",
+          "sourcePage": 25
+        },
+        {
+          "text": "I wash my face.",
+          "kind": "Subject-Verb-Object",
+          "sourcePage": 25
+        },
+        {
+          "text": "I want to buy a toy.",
+          "kind": "Subject-Verb-Object",
+          "sourcePage": 25
+        },
+        {
+          "text": "I want to play on the swing.",
+          "kind": "Subject-Verb-Object",
+          "sourcePage": 25
+        },
+        {
+          "text": "I want to go down the slide.",
+          "kind": "Subject-Verb-Object",
+          "sourcePage": 25
+        },
+        {
+          "text": "I have six dollars.",
+          "kind": "Subject-Verb-Object",
+          "sourcePage": 25
+        },
+        {
+          "text": "Subject-Verb-Adjective (S-V-Adj): My doll is big and fat.",
+          "kind": "Sentence structure",
+          "sourcePage": 26
+        },
+        {
+          "text": "Your dress is red.",
+          "kind": "Subject-Verb-Adjective",
+          "sourcePage": 26
+        },
+        {
+          "text": "Subject-Verb-Noun (S-V-N): It is spring.",
+          "kind": "Sentence structure",
+          "sourcePage": 26
+        },
+        {
+          "text": "There is a butterfly.",
+          "kind": "Subject-Verb-Noun",
+          "sourcePage": 26
+        },
+        {
+          "text": "She is a baby.",
+          "kind": "Subject-Verb-Noun",
+          "sourcePage": 26
+        },
+        {
+          "text": "This is your ball.",
+          "kind": "Subject-Verb-Noun",
+          "sourcePage": 26
+        },
+        {
+          "text": "Subject-Verb-Adverb (S-V-Adv): Kate runs very fast.",
+          "kind": "Sentence structure",
+          "sourcePage": 26
+        },
+        {
+          "text": "She laughs loudly.",
+          "kind": "Subject-Verb-Adverb",
+          "sourcePage": 26
+        },
+        {
+          "text": "The birds fly high.",
+          "kind": "Subject-Verb-Adverb",
+          "sourcePage": 26
+        }
+      ]
+    },
+    {
+      "id": "kindergarten-2",
+      "name": "Kindergarten 2",
+      "ageBand": "5-6",
+      "sentences": [
+        {
+          "text": "Whose ... is this? / Who is / are ...?",
+          "kind": "Everyday question",
+          "sourcePage": 32
+        },
+        {
+          "text": "What time is it?",
+          "kind": "Everyday question",
+          "sourcePage": 32
+        },
+        {
+          "text": "What can you find ...? / What ... can we ...?",
+          "kind": "Everyday question",
+          "sourcePage": 32
+        },
+        {
+          "text": "Which ... is ...? / Which one does ...?",
+          "kind": "Everyday question",
+          "sourcePage": 32
+        },
+        {
+          "text": "Shall we ...?",
+          "kind": "Everyday question",
+          "sourcePage": 32
+        },
+        {
+          "text": "Where are you going? / How do you go to ...?",
+          "kind": "Everyday question",
+          "sourcePage": 32
+        },
+        {
+          "text": "How many ... are there?",
+          "kind": "Everyday question",
+          "sourcePage": 32
+        },
+        {
+          "text": "How do we / you use ...?",
+          "kind": "Everyday question",
+          "sourcePage": 32
+        },
+        {
+          "text": "What are you doing?",
+          "kind": "Everyday question",
+          "sourcePage": 32
+        },
+        {
+          "text": "Where do you live?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "Where is ...?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "What do you want to do?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "Why ...? / Why is ... important?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "What is your name?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "How are you today?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "How do you feel?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "What’s the weather like today?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "What day is it today?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "What is this? / Is this ...?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "Can you ...? / Do you ...?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "What ... do you like?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "How many ...?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "What is your favorite ...?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "What can you do?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "What would you like to eat / drink?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "Would you like ...?",
+          "kind": "Everyday question",
+          "sourcePage": 33
+        },
+        {
+          "text": "Wake up now!",
+          "kind": "Imperative - direct command",
+          "sourcePage": 33
+        },
+        {
+          "text": "Watch out!",
+          "kind": "Imperative - warning",
+          "sourcePage": 33
+        },
+        {
+          "text": "Don’t touch me!",
+          "kind": "Imperative - prohibition",
+          "sourcePage": 33
+        },
+        {
+          "text": "Don’t throw rubbish into the sea!",
+          "kind": "Imperative - prohibition",
+          "sourcePage": 33
+        },
+        {
+          "text": "Don’t eat too much!",
+          "kind": "Imperative - advice",
+          "sourcePage": 33
+        },
+        {
+          "text": "Don’t do that!",
+          "kind": "Imperative - advice",
+          "sourcePage": 33
+        },
+        {
+          "text": "Please don’t go.",
+          "kind": "Imperative - request",
+          "sourcePage": 33
+        },
+        {
+          "text": "Please pass me the apple.",
+          "kind": "Imperative - request",
+          "sourcePage": 33
+        },
+        {
+          "text": "Where is the eagle? / Where are the cats?",
+          "kind": "Singular and plural",
+          "sourcePage": 34
+        },
+        {
+          "text": "Does she work in a school? Yes, she does. / Do they work in a school? Yes, they do.",
+          "kind": "Singular and plural",
+          "sourcePage": 34
+        },
+        {
+          "text": "Do you have carrots? Yes, I do.",
+          "kind": "Question and answer",
+          "sourcePage": 34
+        },
+        {
+          "text": "What does Tina have? She has a doll. / What do you have? I have a cat.",
+          "kind": "Question and answer",
+          "sourcePage": 34
+        },
+        {
+          "text": "I have six dollars. You have four dollars. He has seven dollars.",
+          "kind": "Pronoun agreement",
+          "sourcePage": 34
+        },
+        {
+          "text": "This is a zebra. / These are lions.",
+          "kind": "Singular and plural",
+          "sourcePage": 34
+        },
+        {
+          "text": "You must tidy up here.",
+          "kind": "Modal verb",
+          "sourcePage": 34
+        },
+        {
+          "text": "We have to save the polar bear.",
+          "kind": "Modal verb",
+          "sourcePage": 34
+        },
+        {
+          "text": "You need to wash the toy.",
+          "kind": "Modal verb",
+          "sourcePage": 34
+        },
+        {
+          "text": "I feel happy because I am with my friends.",
+          "kind": "Conjunction",
+          "sourcePage": 35
+        },
+        {
+          "text": "Yesterday was Monday.",
+          "kind": "Simple past",
+          "sourcePage": 35
+        },
+        {
+          "text": "They were very happy.",
+          "kind": "Simple past",
+          "sourcePage": 35
+        },
+        {
+          "text": "Did you come to school by bus?",
+          "kind": "Simple past",
+          "sourcePage": 35
+        },
+        {
+          "text": "I didn’t watch the TV.",
+          "kind": "Simple past",
+          "sourcePage": 35
+        },
+        {
+          "text": "I will come to school tomorrow.",
+          "kind": "Future tense",
+          "sourcePage": 35
+        },
+        {
+          "text": "She will not join us.",
+          "kind": "Future tense",
+          "sourcePage": 35
+        },
+        {
+          "text": "I am going to play on the slide.",
+          "kind": "Future tense",
+          "sourcePage": 35
+        },
+        {
+          "text": "He is not going to do it.",
+          "kind": "Future tense",
+          "sourcePage": 35
+        }
+      ]
+    }
+  ],
+  "adaptationsForClassroomUse": [
+    {
+      "sourcePage": 3,
+      "printed": "What is your name? - XXX.",
+      "used": "What is your name? - My name is ___."
+    },
+    {
+      "sourcePage": 15,
+      "printed": "I like funny book.",
+      "used": "I like a funny book."
+    },
+    {
+      "sourcePage": 15,
+      "printed": "Tony have cat.",
+      "used": "Tony has a cat."
+    },
+    {
+      "sourcePage": 16,
+      "printed": "The dog play(s).",
+      "used": "The dog plays."
+    },
+    {
+      "sourcePage": 32,
+      "printed": "Which be/do...? Which one...is/do...?",
+      "used": "Which ... is ...? / Which one does ...?"
+    },
+    {
+      "sourcePage": 33,
+      "printed": "Why...? / Why...is important?",
+      "used": "Why ...? / Why is ... important?"
+    },
+    {
+      "sourcePage": 35,
+      "printed": "I am going to play slide.",
+      "used": "I am going to play on the slide."
+    }
+  ],
+  "totals": {
+    "sentences": 140,
+    "byLevel": {
+      "pre-nursery": 32,
+      "nursery": 17,
+      "kindergarten-1": 39,
+      "kindergarten-2": 52
+    }
+  }
+}

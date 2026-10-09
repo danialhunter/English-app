@@ -1,0 +1,135 @@
+ETONHOUSE ENGLISH TRACKER 2.5.0 — QUICK START
+
+UPDATE WITHOUT LOSING YOUR RECORDS
+1. In the old app, save a full JSON backup somewhere separate from the computer.
+   Wait for Saved on this computer, then quit the old app.
+2. Mac: open the new DMG, drag EtonHouse English Tracker into Applications, and
+   choose Replace. Windows: run the new Setup EXE.
+3. Open the new app under the same computer user account. Your saved classes,
+   practice, notes and exams load from the existing data folder.
+
+The app makes an immutable before-version-2.5.0.json safety copy before upgrading
+existing data. Reinstalling does not erase records. The legacy data folder remains
+named Seahorse English Tracker (or seahorse-english-tracker on Windows); do not
+rename it, delete it or let a cleanup utility remove it. Do not run the old and new
+apps together. Automatic backups on the same disk are not protection against loss
+of that disk, so keep your exported JSON backup elsewhere.
+
+A NEW COMPUTER STARTS EMPTY
+Installers contain no children's names or recorded class data. To move your class,
+use Tools > Backups & exports > Save full backup on the original computer, then
+Restore a backup on the new one. The same JSON backup works on Mac and Windows.
+There is no automatic synchronization. Excel parent reports cannot restore records.
+Version 2.5.0 uses data schema 7: update every computer restoring a new backup and
+do not downgrade. Older apps refuse the new data format.
+
+INSTALLATION REQUIREMENTS
+Mac: macOS 13 or later, Intel or Apple Silicon. The Mac build is ad-hoc signed but
+not Apple-notarized. You may need to allow it in System Settings > Privacy & Security
+after first attempting to open it. Do not disable system-wide security protections.
+Windows: 64-bit Windows 10 or later. The unsigned installer may show an unknown-
+publisher or SmartScreen warning. It is cross-built on macOS; a real Windows
+installation has not been tested here.
+
+THE DAILY FLOW
+1. Find and select a child. Use the week controls above their name.
+2. Mark each of the five words and one sentence: Needs practice or Knows it.
+3. Press Finished to save the practice session deliberately.
+
+Knows all changes the marks only. It does not press Finished for you.
+A lesson is Completed only when all six items are known AND Finished was pressed.
+Otherwise the session is saved and the remaining items stay available for practice.
+Green shows Knows it; amber shows Needs practice. There is no separate understanding
+observation or With help score. Use the concise expectation for the target and the
+original guide's age-appropriate teaching guidance; do not demand identical spoken
+responses from every age group. Notes are optional.
+
+Practice / Review / Exam / Report are directly available. History keeps previous
+records; Next child moves the teaching session on. Teaching library and Tools are
+at the bottom of the child list. Wait for Saved on this computer before closing.
+
+EARLY COMPLETION AND THE MONTHLY CHECKPOINT
+Children can finish ahead within an unlocked month. The original scheduled week
+still shows Completed when you reach it; you do not need to test the lesson again.
+The actual month boundary requires that child's exam. Earlier allowed practice
+does not repeatedly open an Exam required alert. A child who passes their own
+monthly exam can continue; classmates' results do not lock that child.
+Previous practice and history remain accessible while a future month is locked.
+Finishing a session with Needs practice marks is allowed; it is not a passed exam.
+
+MONTHLY EXAM
+1. Finish every practice session assigned to the child for the teaching month.
+2. Open Exam for that child and month. Start the exam when preparation is complete.
+3. Assess every selected item independently and mark Needs practice or Knows it.
+4. Press Finish exam when all selected items have been checked.
+
+New exams use a fixed sample containing a majority of the planned vocabulary and
+a majority of the planned sentence items. A typical 20-word, 4-sentence month has
+11 words and 3 sentences to assess. The pass rule is at least 80% overall AND a
+strict majority correct in both categories. For a 14-item sample that means at
+least 12 correct, including at least 6 words and 2 sentences.
+Weekly marks are not copied into the exam. Draft answers save as you work: you
+can stop and resume later without restarting. Practise missed items before a retest.
+Completed attempts, original dates, notes and scores stay in history.
+
+Existing unfinished exams keep their saved sample, answers and scoring format.
+Follow the pass requirements displayed for that exam. Completed older exams are
+not regraded. Missing Finished practice records must be completed honestly; the
+update does not invent practice or assessment results.
+
+REVIEW IS SEPARATE FROM CORRECTION
+Use Review to check recall of previously learned items. A later Needs practice
+mark does not erase an earlier achievement or automatically cancel a passed exam.
+Tools includes optional review timing: initially 7 days for a first check and
+28 days after successful recall, with up to 3 targets per visit. These are adjustable
+classroom-trial defaults, not developmental standards. Review can be postponed.
+A correction is only for an actual mistake in the original recording. Give the
+required reason; the original evidence remains in the audit trail. Correcting a
+mistaken pass can require a new exam before further advancement.
+
+ADD, EDIT OR REMOVE A CHILD
+Use + beside Find a child to add one child. For a whole class, open Tools > Classes
+& import names. Create the class with its first teaching week and starting age,
+then download Student names template.xlsx, fill one row per child, and upload it.
+English name, Chinese name, or both may be used. Student ID and starting age are
+optional. Give children with the same name different student IDs. Check the import
+preview before confirming. Uploading names does not delete existing records.
+
+For a correction, select the child and use Edit. Delete child asks you to confirm
+the exact child and class. Removal hides the child but retains recoverable history.
+Use Classes & names > Recently deleted > Restore child to undo it. Do not delete
+a child simply because they missed practice. Each class has its own roster.
+
+PARENT REPORTS: TWO OR THREE MONTHS
+Open Report and choose the date range and One child. Export Excel report creates
+a private family workbook with EtonHouse branding, two separate progress graphs
+(words and sentence structures), learned examples, later review and a next step.
+Choose Whole class only for an internal teacher workbook; never send the whole-
+class file to one family.
+
+The graphs use recorded evidence, without counting repeated practice or early
+completion twice. Missing assessments are gaps, not invented zero scores. A first
+recorded demonstration is not proof the item was newly learned. Older evidence
+without an exact date has a labelled teaching-week fallback. The report is not a
+standardized ability score and does not split one mark into separate understanding
+and speaking measurements. Private teacher notes and other children's results are
+not included in a one-child family report.
+
+TEACHING RESOURCES AND OPTIONAL TOOLS
+Teaching library contains vocabulary, sentence structures, functional speaking,
+grammar, phonics, sight words, reading, writing, songs and guidance with original
+page references. Original guide opens the complete 44-page PDF offline.
+The 216 weekly lessons run from age 2–3 through age 5–6 in source order.
+Use the original PDF for exact printed tables and appendices.
+
+Optional extra practice can be added from the library without blocking core lesson
+completion. Tools contains curriculum planning and future-goal adjustment controls.
+Changes to unstarted future work must not rewrite an already recorded lesson or a
+started exam. History remains available for checking what was actually taught.
+
+BACKUP ROUTINE
+Tools > Backups & exports > Save full backup saves all classes and records.
+Open automatic backups shows the local recovery copies. Restore a backup validates
+the whole file before replacing data and keeps a copy of the outgoing records.
+Save a separate full backup regularly, especially before updates or changing
+computers. To start another class, create a class rather than deleting old history.

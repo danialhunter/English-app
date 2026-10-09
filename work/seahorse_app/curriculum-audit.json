@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "version": "teacher-guide-2024-v1",
+    "generatedAt": "2026-09-02T03:59:25.113Z",
+    "sourceTitle": "A Teacher's Guide to English Teaching",
+    "totalVocabulary": 1072,
+    "totalSentenceStructures": 140,
+    "totalUnits": 216,
+    "totalReviewWordSlots": 8,
+    "totalRepeatedSentenceSlots": 76,
+    "levels": [
+      {
+        "id": "pre-nursery",
+        "name": "Pre-Nursery",
+        "ageBand": "2-3",
+        "firstUnitIndex": 0,
+        "unitCount": 42
+      },
+      {
+        "id": "nursery",
+        "name": "Nursery",
+        "ageBand": "3-4",
+        "firstUnitIndex": 42,
+        "unitCount": 55
+      },
+      {
+        "id": "kindergarten-1",
+        "name": "Kindergarten 1",
+        "ageBand": "4-5",
+        "firstUnitIndex": 97,
+        "unitCount": 66
+      },
+      {
+        "id": "kindergarten-2",
+        "name": "Kindergarten 2",
+        "ageBand": "5-6",
+        "firstUnitIndex": 163,
+        "unitCount": 53
+      }
+    ]
+  },
+  "levels": [
+    {
+      "id": "pre-nursery",
+      "name": "Pre-Nursery",
+      "ageBand": "2-3",
+      "vocabularyCount": 210,
+      "sentenceStructureCount": 32,
+      "unitCount": 42,
+      "sourceVocabularyCovered": 210,
+      "sourceSentencesCovered": 32,
+      "reviewWordSlots": 0,
+      "repeatedSentenceSlots": 10,
+      "firstUnitIndex": 0
+    },
+    {
+      "id": "nursery",
+      "name": "Nursery",
+      "ageBand": "3-4",
+      "vocabularyCount": 271,
+      "sentenceStructureCount": 17,
+      "unitCount": 55,
+      "sourceVocabularyCovered": 271,
+      "sourceSentencesCovered": 17,
+      "reviewWordSlots": 4,
+      "repeatedSentenceSlots": 38,
+      "firstUnitIndex": 42
+    },
+    {
+      "id": "kindergarten-1",
+      "name": "Kindergarten 1",
+      "ageBand": "4-5",
+      "vocabularyCount": 328,
+      "sentenceStructureCount": 39,
+      "unitCount": 66,
+      "sourceVocabularyCovered": 328,
+      "sourceSentencesCovered": 39,
+      "reviewWordSlots": 2,
+      "repeatedSentenceSlots": 27,
+      "firstUnitIndex": 97
+    },
+    {
+      "id": "kindergarten-2",
+      "name": "Kindergarten 2",
+      "ageBand": "5-6",
+      "vocabularyCount": 263,
+      "sentenceStructureCount": 52,
+      "unitCount": 53,
+      "sourceVocabularyCovered": 263,
+      "sourceSentencesCovered": 52,
+      "reviewWordSlots": 2,
+      "repeatedSentenceSlots": 1,
+      "firstUnitIndex": 163
+    }
+  ],
+  "sentenceAdaptationsForClassroomUse": [
+    {
+      "sourcePage": 15,
+      "printed": "I like funny book.",
+      "used": "I like a funny book."
+    },
+    {
+      "sourcePage": 15,
+      "printed": "Tony have cat.",
+      "used": "Tony has a cat."
+    },
+    {
+      "sourcePage": 16,
+      "printed": "The dog play(s).",
+      "used": "The dog plays."
+    },
+    {
+      "sourcePage": 32,
+      "printed": "Which be/do...? Which one...is/do...?",
+      "used": "Which ... is ...? / Which one does ...?"
+    },
+    {
+      "sourcePage": 33,
+      "printed": "Why...? / Why...is important?",
+      "used": "Why ...? / Why is ... important?"
+    },
+    {
+      "sourcePage": 35,
+      "printed": "I am going to play slide.",
+      "used": "I am going to play on the slide."
+    }
+  ]
+}

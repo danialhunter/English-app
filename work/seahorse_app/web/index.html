@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#c40018">
+  <link rel="icon" href="assets/etonhouse-logo.png" type="image/png">
+  <title>EtonHouse English Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell" id="appShell">
+    <aside class="sidebar" aria-label="Children">
+      <header class="brand">
+        <img class="brand-logo" src="assets/etonhouse-logo.png" alt="EtonHouse International Pre-School · Harbin" width="1166" height="326">
+        <div class="brand-caption"><h1>English tracker</h1><span>v2.5.0</span></div>
+      </header>
+      <div class="class-controls"><label for="classSelect" class="visually-hidden">Current class</label><select id="classSelect" aria-label="Current class"></select></div>
+      <div class="roster-tools">
+        <label class="search-field"><span class="visually-hidden">Search children</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><input id="studentSearch" type="search" placeholder="Find a child" autocomplete="off"></label>
+        <button class="add-button" id="addStudentButton" aria-label="Add child">+</button>
+      </div>
+      <div class="filter-row" id="filterRow" role="group" aria-label="Filter children"><button class="filter-chip is-active" data-filter="all">All</button><button class="filter-chip" data-filter="not-practiced">To practice</button><button class="filter-chip" data-filter="review">Review</button><button class="filter-chip" data-filter="mastered">Completed</button></div>
+      <div class="roster-warning" id="rosterWarning" role="status"><p>A name is missing from this class.</p><button id="warningAddButton">Add child</button></div>
+      <nav class="student-list" id="studentList" aria-label="Child roster"></nav>
+      <footer class="sidebar-footer"><button id="guideLibraryButton">Teaching library</button><button id="toolsButton">Tools</button></footer>
+    </aside>
+    <main class="lesson-pane" id="lessonPane">
+      <p id="storageAlert" role="alert" class="storage-alert is-hidden"></p>
+      <div class="teaching-week-heading">
+        <section class="week-control" aria-label="Teaching week">
+          <button class="icon-button" id="previousWeekButton" aria-label="Previous week">&#8592;</button>
+          <button class="week-label" id="weekPickerButton" aria-label="Choose teaching week"><span id="weekLabel">This week</span><small id="weekDateLabel"></small></button>
+          <input class="offscreen-date" id="weekDateInput" type="date" aria-label="Teaching week date">
+          <button class="icon-button" id="nextWeekButton" aria-label="Next week">&#8594;</button>
+        </section>
+        <button class="text-button today-button" id="todayButton">This week</button>
+      </div>
+      <div class="empty-state" id="emptyState">
+        <h2>Ready for your class</h2><p>Add a child with the + button, or open Tools to import your class names or restore a backup.</p>
+      </div>
+      <div class="lesson-content is-hidden" id="lessonContent">
+        <header class="lesson-header">
+          <div><div class="student-heading-line"><p id="rosterPosition"></p><button class="quiet-icon-button" id="editStudentButton" aria-label="Edit child">Edit</button></div><h2 id="studentName">Child</h2><p class="chinese-name" id="studentChineseName"></p><span class="level-pill" id="levelPill">Age 2–3</span></div>
+          <div class="lesson-header-actions"><button class="secondary-button" id="historyButton">History</button><button class="secondary-button" id="nextUnpracticedButton">Next child &#8594;</button></div>
+        </header>
+        <nav class="workflow-nav" aria-label="Child activities">
+          <button id="practiceNavButton" class="is-active" aria-current="page">Practice</button><button id="reviewNavButton">Review</button><button id="monthlyExamsButton">Exam <span id="monthlyExamBadge"></span></button><button id="reportNavButton">Report</button>
+        </nav>
+        <section id="practiceView">
+          <section id="monthlyGateNotice" class="monthly-gate is-hidden" aria-labelledby="monthlyGateTitle" role="status"><div><h3 id="monthlyGateTitle">Exam required</h3><p id="monthlyGateMessage"></p></div><button id="openRequiredExamButton" class="primary-button">Open exam</button></section>
+          <section id="weekCompletionNotice" class="week-completion-card is-hidden" aria-labelledby="weekCompletionTitle"><div class="week-completion-heading"><span class="week-completion-check" aria-hidden="true">✓</span><div><h3 id="weekCompletionTitle">Completed</h3><p id="weekCompletionDate"></p></div></div><div class="completion-actions"><button id="completionSourceButton" class="text-button">View record</button><div id="completionNotice" class="completion-notice is-hidden" role="status"><span class="visually-hidden"></span><button id="undoCompletionButton" class="text-button">Undo completion</button></div></div></section>
+          <section class="lesson-card" aria-labelledby="lessonTitle">
+            <div class="lesson-title-row"><div><h3 id="lessonTitle">Five words + one sentence</h3><p id="topicLabel"></p></div><button id="completeKnownButton" class="secondary-button">Knows all</button></div>
+            <div class="lesson-meta"><span class="week-number" id="curriculumWeekLabel"></span><span id="nextPracticeLabel">This week’s lesson</span><div class="mastery-strand" id="masteryStrand" aria-label="0 of 6 known"></div></div>
+            <div class="item-section"><div class="section-label"><span>Vocabulary</span><small>5 words</small></div><div class="learning-items" id="vocabularyItems"></div></div>
+            <div class="item-section sentence-section"><div class="section-label"><span>Sentence structure</span><small id="sentenceCountLabel">1 sentence</small></div><div class="learning-items" id="sentenceItem"></div></div>
+          </section>
+          <p id="nextPracticeHint" class="next-practice-hint is-hidden"></p>
+          <section class="practice-panel" aria-labelledby="practiceTitle"><div class="practice-copy"><span class="practice-icon" id="practiceIcon" aria-hidden="true"></span><div><h3 id="practiceTitle">Practice not finished</h3><p id="practiceDescription"></p></div></div><button class="practice-button" id="practiceButton">Finished</button></section>
+          <section class="mastery-message" id="masteryMessage" aria-live="polite"></section>
+          <details class="optional-practice"><summary>Notes &amp; teaching tips</summary><p class="quick-complete-hint">Mark against each item's cue. Accept age-appropriate pronunciation. Repeating your answer still needs practice.</p><section class="notes-panel"><label for="teacherNotes">Teacher note <span>optional</span></label><textarea id="teacherNotes" rows="2" placeholder="What should you remember next time?"></textarea><p id="saveStatus" aria-live="polite">Saved on this computer</p></section><details class="grammar-companion" id="grammarCompanion"><summary>From the teacher’s guide</summary><div id="grammarContent" class="grammar-content"></div></details></details>
+        </section>
+        <section id="reviewView" class="is-hidden" aria-labelledby="reviewTitle"><div class="view-heading"><h3 id="reviewTitle">A little review</h3><p>Revisit earlier learning. Today's marks never erase an earlier achievement or exam pass.</p></div><div id="reviewItems"></div><p id="reviewMessage" role="status"></p></section>
+        <footer class="student-navigation"><button id="previousStudentButton"><span>&#8592;</span><small>Previous child</small><strong id="previousStudentName">–</strong></button><div id="studentNavigationStatus"></div><button id="nextStudentButton"><small>Next child</small><strong id="nextStudentName">–</strong><span>&#8594;</span></button></footer>
+      </div>
+    </main>
+  </div>
+
+  <dialog class="modal" id="toolsDialog" aria-labelledby="toolsTitle">
+    <div class="modal-header"><h2 id="toolsTitle">Tools</h2><button class="close-button" data-close-dialog="toolsDialog" aria-label="Close tools">&#215;</button></div>
+    <div class="tool-actions"><button id="manageClassesButton" class="secondary-button">Classes &amp; import names</button><button id="dataButton" class="secondary-button">Backups &amp; exports</button><button id="curriculumButton" class="secondary-button">Curriculum lessons</button><button id="changeCurriculumButton" class="secondary-button">Change unstarted lesson</button><button id="futureGoalButton" class="secondary-button">Adjust a future goal</button></div>
+    <details class="tools-details"><summary>Weekly class overview</summary><section class="class-summary" aria-labelledby="summaryTitle"><div class="summary-heading"><h2 id="summaryTitle">Weekly round</h2><span id="studentCountBadge"></span></div><div class="summary-numbers"><div><strong id="practicedCount">0</strong><span>practised</span></div><div><strong id="masteredCount">0</strong><span>completed</span></div><div><strong id="needsReviewCount">0</strong><span>need practice</span></div></div><div class="summary-progress" aria-hidden="true"><span id="summaryProgressFill"></span></div><p id="summaryEarlyNote" class="summary-early-note is-hidden"></p></section></details>
+    <details class="tools-details"><summary>Next week's plan</summary><section class="next-week-panel" aria-labelledby="nextWeekTitle"><div><h3 id="nextWeekTitle">Next week</h3><p>Lessons change automatically. Repeat holds just the following week for the selected child.</p></div><div class="next-choice" role="group" aria-label="Next week plan"><button data-next-action="repeat">Repeat this lesson</button><button data-next-action="advance">Move to the next lesson</button></div></section></details>
+    <details class="tools-details" id="reviewTimingDetails"><summary>Review timing</summary><form id="reviewTimingForm" class="review-timing-form"><label>First review / needs practice (days)<input id="reviewFirstDays" type="number" min="1" max="90" step="1" required value="7"></label><label>Next review after Knows it (days)<input id="reviewRepeatDays" type="number" min="1" max="180" step="1" required value="28"></label><p>Applies to new reminders. Existing due dates stay unchanged. Up to three items appear each time.</p><button id="saveReviewTimingButton" type="submit" class="secondary-button">Save timing</button><p id="reviewTimingMessage" role="status" aria-live="polite"></p></form></details>
+  </dialog>
+  <dialog class="modal" id="futureGoalDialog" aria-labelledby="futureGoalTitle">
+    <form id="futureGoalForm"><div class="modal-header"><h2 id="futureGoalTitle">Adjust a future goal</h2><button type="button" class="close-button" data-close-dialog="futureGoalDialog" aria-label="Close">&#215;</button></div><p class="modal-intro">For an unstarted future lesson only. Saved practice and exam questions stay unchanged.</p><div class="form-grid"><label>Teaching week<input id="futureGoalWeek" type="date" required></label><label>Target<select id="futureGoalTarget"></select></label><label class="full-width">Expectation<input id="futureGoalExpectation" maxlength="160" required placeholder="e.g. Point to the named object"></label></div><p id="futureGoalMessage" class="data-message" role="status"></p><div class="modal-actions"><button class="primary-button" type="submit">Save goal</button></div></form>
+  </dialog>
+  <dialog class="modal" id="examCorrectionDialog" aria-labelledby="examCorrectionTitle">
+    <form id="examCorrectionForm"><div class="modal-header"><h2 id="examCorrectionTitle">Correct an exam record</h2><button type="button" class="close-button" data-close-dialog="examCorrectionDialog" aria-label="Close">&#215;</button></div><p class="modal-intro">Use only for a recording mistake. The original attempt stays in history; a fresh assessment will be required before further advancement. For later forgetting, use Review instead.</p><div class="form-grid"><label class="full-width">Reason<textarea id="examCorrectionReason" rows="3" maxlength="2000" required></textarea></label></div><p id="examCorrectionMessage" class="data-message" role="status"></p><div class="modal-actions"><button class="secondary-button" type="button" data-close-dialog="examCorrectionDialog">Cancel</button><button class="primary-button" type="submit">Save correction</button></div></form>
+  </dialog>
+
+  <dialog class="modal" id="studentDialog">
+    <form method="dialog" id="studentForm">
+      <div class="modal-header">
+        <div><p class="eyebrow">Roster</p><h2 id="studentDialogTitle">Add child</h2></div>
+        <button type="button" data-close-dialog="studentDialog" class="close-button" aria-label="Close">&#215;</button>
+      </div>
+      <div class="form-grid">
+        <label>English name<input id="englishNameInput" maxlength="80"></label>
+        <label>Chinese name<input id="chineseNameInput" maxlength="80"></label>
+        <label>Starting level<select id="startingLevelInput"></select></label>
+      </div>
+      <div class="modal-actions">
+        <button type="button" id="deleteStudentButton" class="delete-child-button is-hidden">Delete child</button>
+        <button type="button" data-close-dialog="studentDialog" class="secondary-button">Cancel</button>
+        <button value="default" class="primary-button" id="saveStudentButton">Save child</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="modal wide-modal guide-modal" id="guideDialog" aria-labelledby="guideTitle">
+    <div class="modal-header">
+      <div><p class="eyebrow">EtonHouse · teacher’s guide</p><h2 id="guideTitle">Teaching library</h2></div>
+      <button class="close-button" data-close-dialog="guideDialog" aria-label="Close">&#215;</button>
+    </div>
+    <p class="modal-intro">Find vocabulary, sentence structures, grammar and teaching guidance from your English teaching guide.</p>
+    <div class="guide-tools">
+      <label class="search-field guide-search"><span class="visually-hidden">Search teaching guide</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><input id="guideSearch" type="search" placeholder="Search words, grammar or skills" autocomplete="off"></label>
+      <label class="guide-filter">Age / level<select id="guideLevelSelect" aria-label="Teaching guide age or level"></select></label>
+      <label class="guide-filter">Category<select id="guideCategorySelect" aria-label="Teaching guide category"></select></label>
+    </div>
+    <p id="guideSummary" class="guide-summary" role="status" aria-live="polite"></p>
+    <div id="guideResults" class="guide-results"></div>
+    <div class="modal-actions"><button id="openGuideButton" class="secondary-button">Open original teaching guide (PDF)</button></div>
+  </dialog>
+
+  <dialog class="modal wide-modal" id="curriculumDialog">
+    <div class="modal-header">
+      <div><p class="eyebrow">Teacher’s guide</p><h2>Curriculum</h2></div>
+      <button class="close-button" data-close-dialog="curriculumDialog" aria-label="Close">&#215;</button>
+    </div>
+    <p class="modal-intro">Source order is preserved from the Communication &amp; Language sections, beginning at age 2-3 and ending at age 5-6. Every lesson contains five vocabulary entries and one sentence structure.</p>
+    <div class="curriculum-summary" id="curriculumSummary"></div>
+    <div class="curriculum-tabs" id="curriculumTabs"></div>
+    <div class="curriculum-list" id="curriculumList"></div>
+  </dialog>
+
+  <dialog class="modal wide-modal" id="historyDialog">
+    <div class="modal-header">
+      <div><p class="eyebrow">Student record</p><h2 id="historyTitle">History</h2></div>
+      <button class="close-button" data-close-dialog="historyDialog" aria-label="Close">&#215;</button>
+    </div>
+    <div class="history-list" id="historyList"></div>
+  </dialog>
+
+  <dialog class="modal" id="dataDialog">
+    <div class="modal-header">
+      <div><p class="eyebrow">Saved on this computer</p><h2>Backup &amp; data</h2></div>
+      <button class="close-button" data-close-dialog="dataDialog" aria-label="Close">&#215;</button>
+    </div>
+    <p class="modal-intro">The installed app keeps records outside the application, so replacing the app keeps your progress. Automatic safety copies are kept on this computer. Save a full backup to transfer all classes between Mac and Windows.</p>
+    <div class="data-actions">
+      <button id="progressReportButton"><strong>Export progress report</strong><span>A learning graph, words and sentences for families (.xlsx)</span></button>
+      <button id="exportBackupButton"><strong>Save full backup</strong><span>Roster, progress, notes and settings (.json)</span></button>
+      <label class="data-action-label" for="importBackupInput"><strong>Restore a backup</strong><span>Checks the file before replacing current data</span></label>
+      <input class="visually-hidden" type="file" id="importBackupInput" accept="application/json,.json">
+      <button id="exportCsvButton"><strong>Export weekly summary</strong><span>Open the current week in Excel (.csv)</span></button>
+      <button id="openBackupsButton"><strong>Open automatic backups</strong><span>Safety copies made by the installed app</span></button>
+      <button id="resetProgressButton"><strong>Start a new class</strong><span>Keep all existing classes and their history</span></button>
+    </div>
+    <p class="data-message" id="dataMessage" aria-live="polite"></p>
+  </dialog>
+
+  <dialog class="modal wide-modal exam-modal" id="monthlyExamsDialog" aria-labelledby="monthlyExamsTitle">
+    <div class="modal-header">
+      <div><p class="eyebrow">EtonHouse · monthly assessment</p><h2 id="monthlyExamsTitle">Monthly exams</h2></div>
+      <button class="close-button" data-close-dialog="monthlyExamsDialog" aria-label="Close monthly exams">&#215;</button>
+    </div>
+    <div class="exam-toolbar"><label>Teaching month<select id="examPeriodSelect"></select></label><button id="examPolicyButton" class="secondary-button">Exam rules</button></div>
+    <p class="modal-intro" id="examRulesSummary"></p>
+    <details class="exam-overview"><summary>Class overview</summary><section class="exam-class-status" id="examClassStatus" aria-live="polite"></section></details>
+    <div class="exam-workspace">
+      <nav class="exam-child-list" id="examChildList" aria-label="Children's monthly exams"></nav>
+      <section class="exam-assessment" aria-labelledby="examChildTitle">
+        <div class="exam-child-heading"><div><p class="eyebrow">Individual assessment</p><h3 id="examChildTitle">Choose a child</h3></div><span id="examChildResult"></span></div>
+        <p id="examInstructions" class="modal-intro"></p>
+        <div class="exam-readiness"><p id="examReadinessStatus" aria-live="polite"></p><div class="exam-support-actions"><button id="examPracticeButton" class="secondary-button is-hidden">Finish missing practice</button><button id="examAbsenceButton" class="secondary-button is-hidden">Mark absent—exam pending</button></div></div>
+        <div class="exam-toolbar">
+          <p id="examMarkProgress" class="exam-mark-progress" aria-live="polite"></p>
+          <div class="exam-actions"><button id="startExamButton" class="primary-button">Start exam</button><button id="pauseExamButton" class="secondary-button is-hidden">Pause &amp; save</button><button id="finishExamButton" class="primary-button is-hidden" disabled>Finish exam</button></div>
+        </div>
+        <div id="examItems"></div>
+        <details class="exam-optional-note"><summary>Assessment note</summary><label class="exam-note-label" for="examTeacherNote">Optional note<textarea id="examTeacherNote" rows="2" maxlength="4000" placeholder="Strengths and next steps for this child"></textarea></label></details>
+        <details id="examAttemptsDetails"><summary>Previous attempts</summary><div id="examAttemptsList"></div></details>
+      </section>
+    </div>
+    <p id="examMessage" class="data-message" aria-live="polite"></p>
+  </dialog>
+
+  <dialog class="modal" id="examConfirmDialog" aria-labelledby="examConfirmTitle" aria-describedby="examConfirmMessage">
+    <div class="modal-header"><h2 id="examConfirmTitle">Confirm exam</h2><button class="close-button" data-close-dialog="examConfirmDialog" aria-label="Cancel exam action">&#215;</button></div>
+    <p id="examConfirmMessage" class="modal-intro"></p>
+    <div class="modal-actions"><button class="secondary-button" data-close-dialog="examConfirmDialog" autofocus>Cancel</button><button class="primary-button" id="examConfirmAction">Continue</button></div>
+  </dialog>
+
+  <dialog class="modal" id="examPolicyDialog" aria-labelledby="examPolicyTitle">
+    <div class="modal-header"><div><p class="eyebrow">Class assessment rules</p><h2 id="examPolicyTitle">Monthly exam rules</h2></div><button class="close-button" data-close-dialog="examPolicyDialog" aria-label="Close exam rules">&#215;</button></div>
+    <p id="examPolicyIntro" class="modal-intro"></p>
+    <div class="exam-policy-fields">
+      <label>A teaching month means<select id="examPeriodKind"><option value="calendar">Calendar month</option><option value="fourWeeks">Four teaching weeks</option></select></label>
+      <label>Individual pass mark<select id="examPassPercent" disabled><option value="80">80% overall + a majority in each category</option></select></label>
+      <label>Children who do not pass<select id="examIndividualRule" disabled><option value="hold">Review and pass a retest before advancing</option></select></label>
+    </div>
+    <p class="exam-fixed-rule">Each child passes their own monthly exam before advancing. Class totals are information only and never hold back another child. Absence is not a pass. Saved drafts and completed historical results keep their original format and rules.</p>
+    <p id="examPolicyMessage" class="data-message" aria-live="polite"></p>
+    <div class="modal-actions"><button class="secondary-button" data-close-dialog="examPolicyDialog">Cancel</button><button id="saveExamPolicyButton" class="primary-button">Save exam rules</button></div>
+  </dialog>
+
+  <dialog class="modal exam-required-dialog" id="examRequiredDialog" role="alertdialog" aria-labelledby="examRequiredTitle" aria-describedby="examRequiredMessage">
+    <div class="modal-header"><div><p class="eyebrow">Learning checkpoint</p><h2 id="examRequiredTitle">Exam required</h2></div><button class="close-button" data-close-dialog="examRequiredDialog" aria-label="Close exam alert">&#215;</button></div>
+    <p id="examRequiredMessage" class="modal-intro"></p>
+    <p class="exam-alert-help">Next practice stays locked until the exam requirements are met. Earlier practice and saved history are still available.</p>
+    <div class="modal-actions"><button class="secondary-button" data-close-dialog="examRequiredDialog">Stay on this week</button><button id="examRequiredAction" class="primary-button" autofocus>Open required exam</button></div>
+  </dialog>
+
+  <dialog class="modal" id="progressReportDialog" aria-labelledby="progressReportTitle">
+    <div class="modal-header"><div><p class="eyebrow">EtonHouse · Family report</p><h2 id="progressReportTitle">My English journey</h2></div><button class="close-button" data-close-dialog="progressReportDialog" aria-label="Close progress report">&#215;</button></div>
+    <p class="modal-intro">A progress graph and the words and sentence structures your child has learned. One child's report contains no classmates' results.</p>
+    <div class="report-period-presets" role="group" aria-label="Report length"><button class="secondary-button" data-report-months="2">2 months</button><button class="secondary-button" data-report-months="3">3 months</button><button class="secondary-button" data-report-months="custom">Custom dates</button></div>
+    <div class="form-grid"><label>From<input id="reportStartDate" type="date" required></label><label>To<input id="reportEndDate" type="date" required></label></div>
+    <div class="report-scope-fields"><label>Who is this report for?<select id="reportScope"><option value="student">One child · share with their family</option><option value="class">Whole class · one report sheet per child</option></select></label><label id="reportStudentLabel">Child<select id="reportStudentSelect"></select></label></div>
+    <p id="reportPreview" class="report-preview"></p><p id="reportMessage" class="data-message" aria-live="polite"></p>
+    <div class="modal-actions"><button class="secondary-button" data-close-dialog="progressReportDialog">Cancel</button><button id="downloadProgressReportButton" class="primary-button">Export Excel report</button></div>
+  </dialog>
+
+  <dialog class="modal wide-modal" id="classesDialog">
+    <div class="modal-header">
+      <div><p class="eyebrow">Class setup</p><h2>Classes &amp; children's names</h2></div>
+      <button class="close-button" data-close-dialog="classesDialog" aria-label="Close">&#215;</button>
+    </div>
+    <form id="classForm" class="class-form">
+      <label>New class name<input id="classNameInput" required maxlength="80" placeholder="e.g. Dolphin"></label>
+      <label>First teaching week<input id="classStartInput" type="date" required></label>
+      <label>Starting level<select id="classLevelInput"></select></label>
+      <button class="primary-button" type="submit">Create class</button>
+    </form>
+    <hr>
+    <p class="modal-intro">Choose an existing class from the main class menu, or create one above. Download the Excel template, enter one child per row, then upload it here. Either an English or Chinese name is enough.</p>
+    <div class="import-actions">
+      <button id="downloadTemplateButton" class="secondary-button">Download Excel template</button>
+      <label class="primary-button file-button" for="importRosterInput">Upload names (.xlsx / .csv)</label>
+      <input id="importRosterInput" class="visually-hidden" type="file" accept=".xlsx,.csv">
+    </div>
+    <p id="classMessage" class="data-message" aria-live="polite"></p>
+    <div id="importPreview" class="import-preview"></div>
+    <div class="modal-actions class-modal-actions"><button id="recentlyDeletedButton" class="secondary-button">Recently deleted (0)</button><button id="confirmImportButton" class="primary-button" disabled>Add these children</button></div>
+  </dialog>
+
+  <dialog class="modal" id="deletedStudentsDialog" aria-labelledby="deletedStudentsTitle">
+    <div class="modal-header">
+      <div><p class="eyebrow">Child recovery</p><h2 id="deletedStudentsTitle">Recently deleted</h2></div>
+      <button class="close-button" data-close-dialog="deletedStudentsDialog" aria-label="Close">&#215;</button>
+    </div>
+    <p id="deletedStudentsMessage" class="modal-intro" role="status"></p>
+    <div id="deletedStudentsList" class="deleted-students-list"></div>
+    <div class="modal-actions"><button class="secondary-button" data-close-dialog="deletedStudentsDialog">Done</button></div>
+  </dialog>
+
+  <dialog class="modal" id="lessonPickerDialog">
+    <div class="modal-header">
+      <div><p class="eyebrow">Individual starting point</p><h2>Change this lesson</h2></div>
+      <button class="close-button" data-close-dialog="lessonPickerDialog" aria-label="Close">&#215;</button>
+    </div>
+    <label class="lesson-picker-label">Curriculum lesson<select id="lessonPickerSelect"></select></label>
+    <p class="modal-intro">This changes only the selected child’s lesson for the selected teaching week.</p>
+    <div class="modal-actions">
+      <button class="secondary-button" data-close-dialog="lessonPickerDialog">Cancel</button>
+      <button class="primary-button" id="confirmLessonChangeButton">Use this lesson</button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="curriculum.js"></script>
+  <script src="guide-library.js"></script>
+  <script src="seed.js"></script>
+  <script src="monthly-exams.js"></script>
+  <script src="learning-review.js"></script>
+  <script src="model.js"></script>
+  <script src="vendor/xlsx.full.min.js"></script>
+  <script src="roster-import.js"></script>
+  <script src="family-report-template.js"></script>
+  <script src="progress-report.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
